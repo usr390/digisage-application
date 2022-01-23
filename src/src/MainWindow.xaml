@@ -1,0 +1,81 @@
+﻿<Window x:Class="src.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:src"
+        mc:Ignorable="d"
+         Title="MainWindow" Height="600" Width="920"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+    <Border CornerRadius="20">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 2">
+                <GradientStop Color="#FDD2BF" Offset="0.0"/>
+                <GradientStop Color="#FBBEDF" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height=".01*"/>
+                <RowDefinition Height=".25*"/>
+                <RowDefinition Height=".5*"/>
+            </Grid.RowDefinitions>
+            <Image Source="Images/bg.png"
+                   Height="500"
+                   Width="500" Margin="200,-34,200,114" Grid.RowSpan="4"/>
+            <Button Height="15"
+                    Width="15"
+                    Margin="0 20 20 0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Click="exitButton_Click"/>
+            <Border CornerRadius="10"
+                    Background="White"
+                    Width="200"
+                    Height="40"
+                    Grid.Row="2">
+                <Grid>
+                    <Rectangle StrokeThickness="1"/>
+                    <PasswordBox Margin="1"
+                             BorderThickness="0"
+                             Background="Transparent"
+                             VerticalContentAlignment="Center"
+                             Padding="5"
+                             Foreground="Black"
+                             x:Name="passwordTextBox"/>
+                </Grid>
+            </Border>
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".25*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Incorrect password."
+                       FontFamily="/Fonts/#Itim"
+                       HorizontalAlignment="Center"
+                       Grid.Row="0"
+                       FontSize="15"
+                       Foreground="Black"
+                       x:Name="popup"
+                       Visibility="Hidden">
+                </Label>
+                <Button Content="Enter"
+                        FontSize="20"
+                        Grid.Row="1"
+                        FontFamily="/Fonts/#Luckiest Guy"
+                        x:Name="passwordButton"
+                        Margin="0 0 0 30"
+                        Style="{StaticResource LogInButtonTheme}"
+                        Click="passwordButton_Click"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

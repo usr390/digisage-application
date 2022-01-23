@@ -1,0 +1,142 @@
+﻿<Window x:Class="src.Windows.MenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:src.Controls"
+        xmlns:local="clr-namespace:src.Windows"
+        mc:Ignorable="d"
+        Title="MenuWindow" Height="600" Width="960"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+
+    <Border CornerRadius="20">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 2">
+                <GradientStop Color="#FDD2BF" Offset="0.0"/>
+                <GradientStop Color="#FBBEDF" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Border.Clip>
+            <RectangleGeometry RadiusX="10"
+                               RadiusY="10"
+                               Rect="0, 0, 960, 600"/>
+        </Border.Clip>
+        <Grid Margin="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="searchBox" 
+                 Grid.ColumnSpan="4"
+                 Height="35"
+                 Padding="10 0 0 0"
+                 FontFamily="/Fonts/#Itim"
+                 FontSize="18"
+                 Margin="0, 5, 0, 5"
+                 VerticalContentAlignment="Center"
+                 TextChanged="searchBox_TextChanged">
+
+            </TextBox>
+            <ListView x:Name="fileDisplayListView"
+                  SelectionChanged="fileDisplayListView_SelectionChanged"
+                  MouseDoubleClick="fileDisplayListView_MouseDoubleClick"
+                  Grid.Row="1"
+                  Grid.ColumnSpan="4">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <uc:FileControl DigisageFile="{Binding}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="uploadFileButton"
+                Content="Upload"
+                Grid.Column="0"
+                Grid.Row="2"
+                Click="uploadFileButton_Click"
+                Style="{StaticResource MyButtonStyle}"
+                Margin="0, 0, 5, 0"/>
+            <Button x:Name="retrieveFileButton"
+                Content="Retrieve"
+                Grid.Column="1"
+                Grid.Row="2"
+                Click="retrieveFileButton_Click"
+                Style="{StaticResource MyButtonStyle}"
+                Margin="0, 0, 5, 0"/>
+            <Button x:Name="deleteFileButton"
+                Content="Delete"
+                Grid.Column="2"
+                Grid.Row="2"
+                Click="deleteFileButton_Click"
+                Style="{StaticResource MyButtonStyle}"
+                Margin="0, 0, 5, 0"/>
+            <Button x:Name="exitButton"
+                Content="Exit"
+                Grid.Column="3"
+                Grid.Row="2"
+                Click="exitButton_Click"
+                Style="{StaticResource MyButtonStyle}"/>
+
+            <Image Width="250"
+                   Height="250"
+                   Source="/Images/menu/flower1.png"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" Margin="176,165,0,0"
+                   Panel.ZIndex="-1" 
+                   Grid.RowSpan="2" Grid.ColumnSpan="2" Grid.Column="2"/>
+
+            <Image Width="250"
+                   Height="250"
+                   Source="/Images/menu/flower2.png"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" Margin="-77,-101,0,0"
+                   Panel.ZIndex="-1"/>
+
+            <Image Width="250"
+                   Height="250"
+                   Source="/Images/menu/slightly_off_center_top_right.png"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" Margin="195,-43,0,0"
+                   Panel.ZIndex="-1" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="2"/>
+
+            <Image Width="250"
+                   Height="250"
+                   Source="/Images/menu/lower_middle_bottom.png"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" Margin="48,269,0,0"
+                   Panel.ZIndex="-1" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="1"/>
+
+            <Image Width="250"
+                   Height="250"
+                   Source="/Images/menu/flower1.png"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" Margin="36,127,0,0"
+                   Panel.ZIndex="-1" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
+
+            <Image Width="250"
+                   Height="250"
+                   Source="/Images/menu/lower_right.png"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" Margin="45,295,0,0"
+                   Panel.ZIndex="-1" Grid.Column="3" Grid.RowSpan="2" Grid.Row="1"/>
+
+
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,64 @@
+﻿<Window x:Class="src.Windows.UpdateUserInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:src.Windows"
+        mc:Ignorable="d"
+        Title="UpdateUserInfoWindow" Height="600" Width="960"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+
+    <Border CornerRadius="20">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 2">
+                <GradientStop Color="#FDD2BF" Offset="0.0"/>
+                <GradientStop Color="#FBBEDF" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Border.Clip>
+            <RectangleGeometry RadiusX="10"
+                               RadiusY="10"
+                               Rect="0, 0, 960, 600"/>
+        </Border.Clip>
+        <StackPanel Margin="0 60 0 0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <Label Content="Before using Digisage, set up your log-in information."
+                   FontFamily="/Fonts/#Itim"
+                   FontSize="18"/>
+            <Label Content="Password"
+                   Margin="0 15 0 0"
+                   FontFamily="/Fonts/#Itim"
+                   FontSize="15"/>
+            <TextBox x:Name="newPasswordTextBox"
+                     Height="25"
+                     VerticalContentAlignment="Center"/>
+            <Label Content="Confirm Password"
+                   Margin="0 15 0 0"
+                   FontFamily="/Fonts/#Itim"
+                   FontSize="15"/>
+            <TextBox x:Name="newConfirmPasswordTextBox"
+                     Height="25"
+                     VerticalContentAlignment="Center"/>
+            <Label Content="Email (optional)"
+                   Margin="0 15 0 0"
+                   FontSize="15"
+                   FontFamily="/Fonts/#Itim"/>
+            <TextBox x:Name="newEmailTextBox"
+                     Height="25"
+                     VerticalContentAlignment="Center"/>
+            <Button x:Name="updateWindowButton"
+                Content="Confirm"
+                Click="confirmUpdate_Click"
+                Margin="0 50 0 0 "
+                Style="{StaticResource UpdateInfoButtonTheme}"/>
+            <Label Content="Passwords do not match" x:Name="popup" HorizontalAlignment="Center" Foreground="Red" Visibility="Hidden"/>
+            <Label Content="Passwords are too short (has to be 12 or more characters)." x:Name="popup1" HorizontalAlignment="Center" Foreground="Red" Visibility="Hidden"/>
+
+        </StackPanel>
+    </Border>
+</Window>

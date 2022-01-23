@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\Actor-Regular.ttf" />
+    <None Remove="Fonts\Fruktur-Regular.ttf" />
+    <None Remove="Fonts\Itim-Regular.ttf" />
+    <None Remove="Fonts\LuckiestGuy-Regular.ttf" />
+    <None Remove="Fonts\Righteous-Regular.ttf" />
+    <None Remove="Images\bg.PNG" />
+    <None Remove="Images\menu\flower1.png" />
+    <None Remove="Images\menu\flower2.png" />
+    <None Remove="Images\menu\lower_middle_bottom.png" />
+    <None Remove="Images\menu\lower_right.png" />
+    <None Remove="Images\menu\slightly_off_center_top_right.png" />
+    <None Remove="Images\sages\ref6t.png" />
+    <None Remove="Images\sages\ref8t.png" />
+    <None Remove="Images\sages\ref9t.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Bson" Version="2.13.2" />
+    <PackageReference Include="MongoDB.Driver" Version="2.13.2" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\Actor-Regular.ttf" />
+    <Resource Include="Fonts\Fruktur-Regular.ttf" />
+    <Resource Include="Fonts\Itim-Regular.ttf" />
+    <Resource Include="Fonts\LuckiestGuy-Regular.ttf" />
+    <Resource Include="Fonts\Righteous-Regular.ttf" />
+    <Resource Include="Images\bg.PNG" />
+    <Resource Include="Images\menu\flower1.png" />
+    <Resource Include="Images\menu\flower2.png" />
+    <Resource Include="Images\menu\lower_middle_bottom.png" />
+    <Resource Include="Images\menu\lower_right.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\menu\slightly_off_center_top_right.png" />
+    <Resource Include="Images\sages\ref6t.png" />
+    <Resource Include="Images\sages\ref8t.png" />
+    <Resource Include="Images\sages\ref9t.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Temp\" />
+  </ItemGroup>
+
+</Project>

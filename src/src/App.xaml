@@ -1,0 +1,19 @@
+﻿<Application x:Class="src.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:src"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/LogInButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/MenuButtonsTheme.xaml"/>
+                <ResourceDictionary Source="Theme/LogInTextBoxTheme.xaml"/>
+                <ResourceDictionary Source="Theme/ScrollbarTheme.xaml"/>
+                <ResourceDictionary Source="Theme/UpdateInfoButtonTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+        
+    </Application.Resources>
+</Application>
