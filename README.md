@@ -1,5 +1,5 @@
 # Introduction 
-Digisage is a WPF application capable of storing files behind password-protection software. It was created over the course of 4 months by @vendingcompute and @moisescervantes as their senior design project.
+Digisage is a WPF application capable of storing files behind password-protection software. It was created over the course of 4 months by @vendingcompute and @MoisesCervantes99 as their senior design project.
 
 Main Objective: Give people better control over their files.
 
